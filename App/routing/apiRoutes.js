@@ -1,4 +1,4 @@
-let friends = require('./data/friends.js');
+let friends = require('../data/friends');
 let path = require("path");
 
 module.exports = function(app) {
@@ -14,6 +14,13 @@ module.exports = function(app) {
 
     let friendMatch = "";
     let friendImage = "";
+    let difference = [];
+
+    let bffMath = userInfo.reduce((a,b) => a  + parseInt(b), 0);
+    let bffScore = parseInt(bffMath);
+
+
+
         
     })
 }
