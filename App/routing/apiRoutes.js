@@ -22,7 +22,7 @@ module.exports = function(app) {
         for (var i = 0; i < friends.length; i++) {
             let resultsDifference = 0;
 
-            //The general convention is to use i, j and k as index counters in for loops. codeacademy.com
+            //The general convention is to use i, j and k as index counters in for loops. //codeacademy.com
             for (var j = 0; j < friends[i].results[j]; j++) {
                 resultsDifference += Math.abs(parseInt(userScores[j]) - parseInt(friends[i].results[j]));
 
