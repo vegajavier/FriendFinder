@@ -4,12 +4,12 @@ let bodyParser = require("body-parser");
 
 //Put a description in it. It's a string. This helps people discover your package, as it's listed in npm search.
 let path = require('path');
-
 let app = express()
 let PORT = process.env. PORT || 8080;
 
-require('');
-require('')
+
+require('./App/routing/apiRoutes')(app);
+require('./App/routing/htmlRoutes')(app);
 
 app.listen(PORT, function(){
     console.log("Listening on PORT ${PORT}")
