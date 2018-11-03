@@ -10,7 +10,7 @@ module.exports = function(app) {
 
         let bff = {
             name: "",
-            photo: "",
+            profilePicture: "",
             difference: 100
 
         };
@@ -22,6 +22,7 @@ module.exports = function(app) {
         for (var i = 0; i < friends.length; i++) {
             let resultsDifference = 0;
 
+            //The general convention is to use i, j and k as index counters in for loops. codeacademy.com
             for (var j = 0; j < friends[i].results[j]; j++) {
                 resultsDifference += Math.abs(parseInt(userScores[j]) - parseInt(friends[i].results[j]));
 
@@ -32,7 +33,7 @@ module.exports = function(app) {
                 }
             }
         }
-        //Save new user to database
+        //user to database
         friends.push(userInfo);
 
         res.json(bff);
