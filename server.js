@@ -1,20 +1,23 @@
-let express = require ('express');
-//bodyParser object exposes various factories to create middlewares. All middlewares will populate the req.body
-let bodyParser = require("body-parser");
+const express = require('express');
+const bodyParser = require("body-parser");
 
-//Put a description in it. It's a string. This helps people discover your package, as it's listed in npm search.
-let path = require('path');
-let app = express()
-let PORT = process.env. PORT || 8080;
+console.log("server connected");
 
+
+const app = express();
+
+let PORT = process.env.PORT || 8080;
+
+// Sets up the Express app to handle data parsing
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
-app.use(express.static(__dirname + './App/public'));
+app.use(bodyParser.text());
 
 
-require('./App/routing/apiRoutes')(app);
-require('./App/routing/htmlRoutes')(app);
+// ROUTER
+require('./app/routing/apiRoutes')(app);
+require('./app/routing/htmlRoutes')(app);
 
-app.listen(PORT, function(){
-    console.log("Listening on PORT ${PORT}")
-})
+app.listen(PORT, function() {
+    console.log("App listening on PORT: " + PORT);
+  });
